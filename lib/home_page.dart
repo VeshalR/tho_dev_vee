@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.deepPurpleAccent, Colors.purple],
+            colors: [const Color.fromARGB(255, 103, 65, 206), Colors.purple],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

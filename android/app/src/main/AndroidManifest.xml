@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="tho_dev_vee"
+        android:label="Thofev Fitness"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
