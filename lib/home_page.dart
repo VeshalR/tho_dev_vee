@@ -1,6 +1,7 @@
 // lib/home_page.dart
 
 import 'package:flutter/material.dart';
+import 'package:tho_dev_vee/calorie_calculator_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -84,6 +85,12 @@ class HomePage extends StatelessWidget {
                 }),
                 _buildActionButton(context, 'Progress', Icons.show_chart, () {
                   // Navigate to progress page
+                }),
+                _buildActionButton(context, 'Calorie Calculator', Icons.calculate, () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalorieCalculatorPage()), // Link to Calorie Calculator Page
+                  );
                 }),
               ],
             ),
