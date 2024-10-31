@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 
 class CalorieCalculatorPage extends StatefulWidget {
+  const CalorieCalculatorPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CalorieCalculatorPageState createState() => _CalorieCalculatorPageState();
 }
 

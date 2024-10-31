@@ -6,7 +6,10 @@ import 'home_page.dart'; // Ensure this import is correct
 import 'signup_page.dart'; // Import the SignUpPage
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
@@ -17,21 +20,26 @@ class _LoginPageState extends State<LoginPage> {
   String? errorMessage;
 
   void login() async {
-    try {
-      await _auth.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-      );
+  try {
+    await _auth.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+
+    // Use mounted to check if the widget is still in the tree
+    if (mounted) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()), // Navigate to HomePage
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
-    } on FirebaseAuthException catch (e) {
-      setState(() {
-        errorMessage = e.message;
-      });
     }
+  } on FirebaseAuthException catch (e) {
+    setState(() {
+      errorMessage = e.message;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()), // Navigate to SignUpPage
+                  MaterialPageRoute(builder: (context) => const SignUpPage()), // Navigate to SignUpPage
                 );
               },
               child: const Text("Don't have an account? Sign Up"),

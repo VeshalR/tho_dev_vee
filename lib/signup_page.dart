@@ -2,9 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:tho_dev_vee/home_page.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SignUpPageState createState() => _SignUpPageState();
 }
 
@@ -15,18 +19,26 @@ class _SignUpPageState extends State<SignUpPage> {
   String? errorMessage;
 
   void signUp() async {
-    try {
-      await _auth.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
+  try {
+    await _auth.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+
+    // Check if the widget is still mounted before using `context`
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
-      Navigator.pop(context); // Navigate back to the login page after sign up
-    } on FirebaseAuthException catch (e) {
-      setState(() {
-        errorMessage = e.message;
-      });
     }
+  } on FirebaseAuthException catch (e) {
+    setState(() {
+      errorMessage = e.message;
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:tho_dev_vee/calorie_calculator_page.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +22,9 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [const Color.fromARGB(255, 103, 65, 206), Colors.purple],
+            colors: [Color.fromARGB(255, 103, 65, 206), Colors.purple],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -89,7 +91,7 @@ class HomePage extends StatelessWidget {
                 _buildActionButton(context, 'Calorie Calculator', Icons.calculate, () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CalorieCalculatorPage()), // Link to Calorie Calculator Page
+                    MaterialPageRoute(builder: (context) => const CalorieCalculatorPage()), // Link to Calorie Calculator Page
                   );
                 }),
               ],
@@ -106,7 +108,7 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.8),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black26,
             blurRadius: 8,
@@ -124,7 +126,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             title,
-            style: TextStyle(color: Colors.black54),
+            style: const TextStyle(color: Colors.black54),
           ),
         ],
       ),
@@ -137,8 +139,8 @@ class HomePage extends StatelessWidget {
         ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            shape: CircleBorder(), backgroundColor: Colors.deepPurple,
-            padding: EdgeInsets.all(20),
+            shape: const CircleBorder(), backgroundColor: Colors.deepPurple,
+            padding: const EdgeInsets.all(20),
             shadowColor: Colors.black26,
             elevation: 5,
           ),
@@ -147,7 +149,7 @@ class HomePage extends StatelessWidget {
             children: [
               Icon(icon, size: 40, color: Colors.white),
               const SizedBox(height: 5),
-              Text(label, style: TextStyle(color: Colors.white)),
+              Text(label, style: const TextStyle(color: Colors.white)),
             ],
           ),
         ),
