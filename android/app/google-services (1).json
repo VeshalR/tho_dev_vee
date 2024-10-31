@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740238905897",
+    "project_id": "thodev-11377",
+    "storage_bucket": "thodev-11377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740238905897:android:e94fb6e632ab27b2bfc238",
+        "android_client_info": {
+          "package_name": "com.example.tho_dev_vee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0KxcVhiHipsO2ySZ3AldI7koxlPC7P6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
